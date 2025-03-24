@@ -62,8 +62,15 @@ export function MarketData() {
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section ref={containerRef} className="relative py-32 overflow-hidden">
+    <section ref={containerRef} className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
       {/* Фоновые элементы */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50" />
@@ -71,23 +78,23 @@ export function MarketData() {
         <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-secondary-500/5 to-transparent" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-16 md:mb-20">
           <motion.div 
-            className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
+            className="inline-block mb-3 sm:mb-4 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
                      border border-primary-500/20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-medium">
+            <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-medium text-sm sm:text-base">
               Рыночные данные
             </span>
           </motion.div>
 
           <motion.h2 
-            className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-8
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-4 sm:mb-8
                      tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +106,7 @@ export function MarketData() {
         </div>
 
         <motion.p
-          className="text-gray-700 max-w-2xl mx-auto"
+          className="text-gray-700 max-w-2xl mx-auto text-sm sm:text-base mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -108,11 +115,11 @@ export function MarketData() {
           Ключевые показатели развития искусственного интеллекта
         </motion.p>
 
-        <motion.div style={{ y }} className="grid md:grid-cols-3 gap-8">
+        <motion.div style={{ y }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {defaultData.map((item, index) => (
             <motion.div
               key={item.id}
-              className="relative p-8 rounded-2xl bg-white shadow-xl shadow-gray-200/50 border border-gray-100 
+              className="relative p-5 sm:p-8 rounded-2xl bg-white shadow-xl shadow-gray-200/50 border border-gray-100 
                        group hover:scale-105 transition-all duration-300 animate-float"
               style={{ '--animation-delay': `${index * 0.2}s` } as React.CSSProperties}
               initial={{ opacity: 0, y: 20 }}
@@ -125,7 +132,7 @@ export function MarketData() {
                            opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 
                            group-hover:shadow-[0_0_30px_rgba(99,102,241,0.3)]" />
 
-              <div className="relative mb-6 w-16 h-16">
+              <div className="relative mb-4 sm:mb-6 w-12 h-12 sm:w-16 sm:h-16">
                 <Image
                   src={item.icon}
                   alt=""
@@ -135,7 +142,7 @@ export function MarketData() {
               </div>
 
               <motion.div 
-                className={`text-6xl lg:text-7xl font-bold ${item.gradient} bg-clip-text text-transparent mb-4
+                className={`text-4xl sm:text-5xl lg:text-7xl font-bold ${item.gradient} bg-clip-text text-transparent mb-3 sm:mb-4
                          relative after:absolute after:inset-0 after:bg-gradient-to-r after:from-white/20 after:to-transparent 
                          after:animate-pulse`}
                 initial={{ scale: 0.5, opacity: 0 }}
@@ -146,7 +153,7 @@ export function MarketData() {
                 {item.value}
               </motion.div>
 
-              <p className="text-gray-700 font-light leading-relaxed text-lg">
+              <p className="text-gray-700 font-light leading-relaxed text-sm sm:text-base lg:text-lg">
                 {item.label}
               </p>
 
@@ -157,17 +164,19 @@ export function MarketData() {
         </motion.div>
 
         <motion.div 
-          className="mt-16 text-center"
+          className="mt-10 sm:mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <button className="group px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full text-lg font-medium 
+          <button 
+            onClick={scrollToContact}
+            className="group px-5 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full text-sm sm:text-base md:text-lg font-medium 
                          text-white shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 
                          transition-all duration-300 relative overflow-hidden flex items-center justify-center gap-2 mx-auto">
             <span className="relative z-10 whitespace-nowrap">Начать внедрение</span>
-            <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 relative z-10" viewBox="0 0 20 20" fill="currentColor">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1 relative z-10" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
             <div 

@@ -9,7 +9,7 @@ const defaultSteps = [
     title: 'Анализ задач',
     description: 'Изучаем ваши бизнес-процессы и определяем, где AI может принести максимальную пользу',
     icon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
       </svg>
     )
@@ -19,7 +19,7 @@ const defaultSteps = [
     title: 'Разработка решения',
     description: 'Создаем и обучаем AI-ассистента специально под ваши задачи и особенности бизнеса',
     icon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     )
@@ -29,7 +29,7 @@ const defaultSteps = [
     title: 'Внедрение',
     description: 'Интегрируем решение в ваши процессы, обучаем сотрудников и обеспечиваем поддержку',
     icon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     )
@@ -37,8 +37,15 @@ const defaultSteps = [
 ]
 
 export function Process({ steps = defaultSteps }: ProcessProps) {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50">
       {/* Фоновые элементы */}
       <div className="absolute inset-0">
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-primary-500/10 to-transparent" />
@@ -48,23 +55,23 @@ export function Process({ steps = defaultSteps }: ProcessProps) {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Заголовок */}
-        <div className="text-center mb-16 sm:mb-20">
+        <div className="text-center mb-10 sm:mb-16 lg:mb-20">
           <motion.div 
-            className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
+            className="inline-block mb-3 sm:mb-4 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
                      border border-primary-500/20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-medium">
+            <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-medium text-sm sm:text-base">
               Как мы работаем
             </span>
           </motion.div>
 
           <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent 
-                     tracking-tight max-w-2xl mx-auto mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent 
+                     tracking-tight max-w-2xl mx-auto mb-2 sm:mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -74,7 +81,7 @@ export function Process({ steps = defaultSteps }: ProcessProps) {
           </motion.h2>
 
           <motion.p
-            className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg"
+            className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base md:text-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -85,11 +92,11 @@ export function Process({ steps = defaultSteps }: ProcessProps) {
         </div>
 
         {/* Шаги */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}
-              className="relative p-6 sm:p-8 rounded-2xl bg-white shadow-xl shadow-gray-200/50 border border-gray-100 
+              className="relative p-5 sm:p-6 md:p-8 rounded-2xl bg-white shadow-xl shadow-gray-200/50 border border-gray-100 
                        group hover:scale-105 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -101,19 +108,19 @@ export function Process({ steps = defaultSteps }: ProcessProps) {
                            opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 
                            group-hover:shadow-[0_0_30px_rgba(99,102,241,0.3)]" />
 
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-primary-500 to-secondary-500
-                           flex items-center justify-center text-white mb-6 shadow-lg shadow-primary-500/20
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-r from-primary-500 to-secondary-500
+                           flex items-center justify-center text-white mb-4 sm:mb-6 shadow-lg shadow-primary-500/20
                            group-hover:shadow-xl group-hover:shadow-primary-500/30 transition-all
                            relative after:absolute after:inset-0 after:bg-gradient-to-r after:from-white/20 after:to-transparent 
                            after:opacity-0 group-hover:after:opacity-100 after:transition-opacity after:duration-300 after:rounded-2xl">
                 {step.icon}
               </div>
 
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-4">
                 {step.title}
               </h3>
 
-              <p className="text-gray-600">
+              <p className="text-sm sm:text-base text-gray-600">
                 {step.description}
               </p>
 
@@ -123,8 +130,8 @@ export function Process({ steps = defaultSteps }: ProcessProps) {
               )}
 
               {/* Номер шага */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 
-                           flex items-center justify-center text-white text-sm font-medium
+              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 
+                           flex items-center justify-center text-white text-xs sm:text-sm font-medium
                            shadow-lg shadow-primary-500/20 group-hover:shadow-xl group-hover:shadow-primary-500/30 
                            transition-all">
                 {step.id}
@@ -135,21 +142,22 @@ export function Process({ steps = defaultSteps }: ProcessProps) {
 
         {/* Кнопка */}
         <motion.div 
-          className="mt-12 sm:mt-16 text-center"
+          className="mt-8 sm:mt-12 md:mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <button 
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
+            onClick={scrollToContact}
+            className="inline-flex items-center gap-2 px-5 sm:px-8 py-2.5 sm:py-4 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
                      text-gray-900 font-medium relative overflow-hidden group/btn
                      hover:from-primary-500 hover:to-secondary-500 hover:text-white
-                     transition-all duration-300"
+                     transition-all duration-300 text-sm sm:text-base"
           >
             <span className="relative z-10">Начать внедрение</span>
             <svg 
-              className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 relative z-10" 
+              className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover/btn:translate-x-1 relative z-10" 
               viewBox="0 0 20 20" 
               fill="currentColor"
             >

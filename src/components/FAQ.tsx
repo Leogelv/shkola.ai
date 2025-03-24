@@ -35,8 +35,15 @@ const defaultItems = [
 export function FAQ({ items = defaultItems }: FAQProps) {
   const [activeId, setActiveId] = useState<number | null>(null)
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+    <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
       {/* Фоновые элементы */}
       <div className="absolute inset-0">
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-primary-500/10 to-transparent" />
@@ -46,23 +53,23 @@ export function FAQ({ items = defaultItems }: FAQProps) {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Заголовок */}
-        <div className="text-center mb-16 sm:mb-20">
+        <div className="text-center mb-10 sm:mb-16 lg:mb-20">
           <motion.div 
-            className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
+            className="inline-block mb-3 sm:mb-4 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
                      border border-primary-500/20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-medium">
+            <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-medium text-sm sm:text-base">
               Часто задаваемые вопросы
             </span>
           </motion.div>
 
           <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent 
-                     tracking-tight max-w-2xl mx-auto mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent 
+                     tracking-tight max-w-2xl mx-auto mb-2 sm:mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -72,7 +79,7 @@ export function FAQ({ items = defaultItems }: FAQProps) {
           </motion.h2>
 
           <motion.p
-            className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg"
+            className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base md:text-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -87,7 +94,7 @@ export function FAQ({ items = defaultItems }: FAQProps) {
           {items.map((item, index) => (
             <motion.div
               key={item.id}
-              className="mb-4"
+              className="mb-3 sm:mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -95,7 +102,7 @@ export function FAQ({ items = defaultItems }: FAQProps) {
             >
               <button
                 onClick={() => setActiveId(activeId === item.id ? null : item.id)}
-                className="w-full p-6 sm:p-8 rounded-2xl bg-white shadow-xl shadow-gray-200/50 border border-gray-100 
+                className="w-full p-4 sm:p-6 md:p-8 rounded-2xl bg-white shadow-xl shadow-gray-200/50 border border-gray-100 
                          text-left transition-all duration-300 relative
                          group hover:scale-[1.02]"
               >
@@ -104,12 +111,12 @@ export function FAQ({ items = defaultItems }: FAQProps) {
                              opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 
                              group-hover:shadow-[0_0_30px_rgba(99,102,241,0.3)]" />
 
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+                <div className="flex items-center justify-between gap-3 sm:gap-4">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 pr-6">
                     {item.question}
                   </h3>
                   <svg
-                    className={`w-6 h-6 text-primary-500 transition-transform duration-300 flex-shrink-0
+                    className={`w-5 h-5 sm:w-6 sm:h-6 text-primary-500 transition-transform duration-300 flex-shrink-0
                             ${activeId === item.id ? 'rotate-180' : ''}`}
                     viewBox="0 0 24 24"
                     fill="none"
@@ -124,12 +131,12 @@ export function FAQ({ items = defaultItems }: FAQProps) {
                   {activeId === item.id && (
                     <motion.div
                       initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                      animate={{ height: 'auto', opacity: 1, marginTop: 16 }}
+                      animate={{ height: 'auto', opacity: 1, marginTop: 12 }}
                       exit={{ height: 0, opacity: 0, marginTop: 0 }}
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="text-gray-600 text-base sm:text-lg">
+                      <p className="text-gray-600 text-sm sm:text-base">
                         {item.answer}
                       </p>
                     </motion.div>
@@ -142,21 +149,22 @@ export function FAQ({ items = defaultItems }: FAQProps) {
 
         {/* Кнопка */}
         <motion.div 
-          className="mt-12 sm:mt-16 text-center"
+          className="mt-8 sm:mt-12 md:mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <button 
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
+            onClick={scrollToContact}
+            className="inline-flex items-center gap-2 px-5 sm:px-8 py-2.5 sm:py-4 rounded-full bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
                      text-gray-900 font-medium relative overflow-hidden group/btn
                      hover:from-primary-500 hover:to-secondary-500 hover:text-white
-                     transition-all duration-300"
+                     transition-all duration-300 text-sm sm:text-base"
           >
             <span className="relative z-10">Задать свой вопрос</span>
             <svg 
-              className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 relative z-10" 
+              className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover/btn:translate-x-1 relative z-10" 
               viewBox="0 0 20 20" 
               fill="currentColor"
             >
