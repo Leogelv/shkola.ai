@@ -1,3 +1,5 @@
+'use client'
+
 import CourseHero from '@/components/course/CourseHero'
 import AboutCourse from '@/components/course/AboutCourse'
 import Program from '@/components/course/Program'

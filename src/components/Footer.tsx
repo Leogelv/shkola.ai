@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
-// import Image from 'next/image'
+import Image from 'next/image'
 // import logoImage from '../../public/logo.svg'
 
 export function Footer() {
@@ -21,8 +23,14 @@ export function Footer() {
           {/* Колонка с логотипом и информацией */}
           <div className="space-y-4 sm:space-y-6">
             <Link href="/old_lP_alma" className="flex items-center gap-2">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12">
+                <Image 
+                  src="/logos/logo.svg" 
+                  alt="AlmaTech" 
+                  width={48} 
+                  height={48} 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg sm:text-xl font-bold text-white">

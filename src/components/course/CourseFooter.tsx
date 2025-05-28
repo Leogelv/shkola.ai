@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function CourseFooter() {
   const currentYear = new Date().getFullYear()
@@ -12,8 +13,14 @@ export function CourseFooter() {
           {/* Колонка с логотипом и информацией */}
           <div className="space-y-4 sm:space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12">
+                <Image 
+                  src="/logos/logo.svg" 
+                  alt="shkola.ai" 
+                  width={48} 
+                  height={48} 
+                  className="w-full h-full object-contain brightness-0 invert"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg sm:text-xl font-bold text-white">

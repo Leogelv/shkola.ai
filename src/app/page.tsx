@@ -1,3 +1,5 @@
+'use client'
+
 import { CourseHeader } from '@/components/course/CourseHeader'
 import CourseHero from '@/components/course/CourseHero'
 import AboutCourse from '@/components/course/AboutCourse'
