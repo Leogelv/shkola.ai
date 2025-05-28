@@ -22,22 +22,19 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 sm:mb-12">
           {/* Колонка с логотипом и информацией */}
           <div className="space-y-4 sm:space-y-6">
-            <Link href="/old_lP_alma" className="flex items-center gap-2">
-              <div className="w-10 h-10 sm:w-12 sm:h-12">
+            <Link href="/old_lP_alma" className="flex items-center gap-3">
+              <div className="w-12 h-12 sm:w-16 sm:h-16">
                 <Image 
                   src="/logos/logo.svg" 
                   alt="AlmaTech" 
-                  width={48} 
-                  height={48} 
+                  width={64} 
+                  height={64} 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="text-lg sm:text-xl font-bold text-white">
-                  AlmaTech
-                </span>
-                <span className="text-xs sm:text-sm text-gray-400 -mt-1">AI Solutions</span>
-              </div>
+              <span className="text-xl sm:text-2xl font-bold text-white">
+                AlmaTech
+              </span>
             </Link>
             <p className="text-sm text-gray-400 max-w-xs">
               Помогаем бизнесу внедрять искусственный интеллект для оптимизации процессов и роста эффективности.
