@@ -39,26 +39,27 @@ export function CourseHeader() {
   return (
     <header
       className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4',
-        isScrolled
-          ? 'bg-white/90 backdrop-blur-sm shadow-md'
-          : 'bg-transparent'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between h-16 sm:h-20">
           {/* Логотип */}
           <div className="flex-shrink-0">
-            <Link href="/">
-              <div className="w-48 h-48 sm:w-64 sm:h-64">
+            <Link href="/" className="flex items-center">
+              <div className="w-10 h-10 sm:w-12 sm:h-12">
                 <Image 
                   src="/logos/logo.svg" 
                   alt="shkola.ai" 
-                  width={256} 
-                  height={256} 
+                  width={48} 
+                  height={48} 
                   className="w-full h-full object-contain"
                 />
               </div>
+              <span className="ml-2 text-lg sm:text-xl font-bold text-gray-900">
+                shkola.ai
+              </span>
             </Link>
           </div>
 
@@ -66,25 +67,25 @@ export function CourseHeader() {
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base"
+              className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base font-medium"
             >
               О курсе
             </button>
             <button
               onClick={() => scrollToSection('program')}
-              className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base"
+              className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base font-medium"
             >
               Программа
             </button>
             <button
               onClick={() => scrollToSection('mentors')}
-              className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base"
+              className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base font-medium"
             >
               Менторы
             </button>
             <Link
               href="/old_lP_alma"
-              className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base"
+              className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base font-medium"
             >
               AI для бизнеса
             </Link>
@@ -114,7 +115,7 @@ export function CourseHeader() {
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-1.5 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none"
+              className="p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none transition-colors"
             >
               {!isMobileMenuOpen ? (
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -138,41 +139,43 @@ export function CourseHeader() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden bg-white border-t border-gray-200 shadow-lg overflow-hidden"
+            className="md:hidden bg-white border-t border-gray-200 shadow-lg"
           >
-            <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 flex flex-col">
+            <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 space-y-1">
               <button
                 onClick={() => scrollToSection('about')}
-                className="px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
+                className="block w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors font-medium"
               >
                 О курсе
               </button>
               <button
                 onClick={() => scrollToSection('program')}
-                className="px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
+                className="block w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors font-medium"
               >
                 Программа
               </button>
               <button
                 onClick={() => scrollToSection('mentors')}
-                className="px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
+                className="block w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors font-medium"
               >
                 Менторы
               </button>
               <Link
                 href="/old_lP_alma"
-                className="px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
+                className="block w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 AI для бизнеса
               </Link>
-              <button
-                onClick={scrollToContact}
-                className="mx-3 mt-2 px-3 py-3 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
-                       text-gray-900 rounded-lg font-medium text-left"
-              >
-                Записаться
-              </button>
+              <div className="pt-2 border-t border-gray-200">
+                <button
+                  onClick={scrollToContact}
+                  className="block w-full text-left px-3 py-2 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
+                         text-gray-900 rounded-lg font-medium"
+                >
+                  Записаться
+                </button>
+              </div>
             </div>
           </motion.div>
         )}

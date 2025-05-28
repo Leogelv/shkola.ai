@@ -30,7 +30,7 @@ const Hero = ({
   return (
     <div 
       ref={containerRef}
-      className="relative w-full min-h-[90svh] sm:min-h-[100svh] flex items-center bg-gradient-to-br from-white via-gray-50 to-white text-gray-900 px-4 sm:px-6 overflow-hidden"
+      className="relative w-full min-h-[90svh] sm:min-h-[100svh] flex items-center bg-gradient-to-br from-white via-gray-50 to-white text-gray-900 px-4 sm:px-6 overflow-hidden pt-16 sm:pt-20"
     >
       
       {/* Фоновые элементы */}
