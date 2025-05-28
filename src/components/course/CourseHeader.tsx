@@ -4,10 +4,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import clsx from 'clsx'
 import Link from 'next/link'
-// import Image from 'next/image'
-// import logoImage from '../../public/logo.svg'
 
-export function Header() {
+export function CourseHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -23,7 +21,7 @@ export function Header() {
 
   const scrollToContact = () => {
     setIsMobileMenuOpen(false)
-    const contactSection = document.getElementById('contact')
+    const contactSection = document.querySelector('section:last-child')
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' })
     }
@@ -50,15 +48,15 @@ export function Header() {
         <nav className="flex items-center justify-between">
           {/* Логотип */}
           <div className="flex-shrink-0">
-            <Link href="/old_lP_alma" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
+                <span className="text-white font-bold text-lg">S</span>
               </div>
               <div className="flex flex-col">
                 <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
-                  AlmaTech
+                  shkola.ai
                 </span>
-                <span className="text-xs sm:text-sm text-gray-600 -mt-1">AI Solutions</span>
+                <span className="text-xs sm:text-sm text-gray-600 -mt-1">AI Education</span>
               </div>
             </Link>
           </div>
@@ -66,32 +64,32 @@ export function Header() {
           {/* Десктоп навигация */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
             <button
-              onClick={() => scrollToSection('challenges')}
+              onClick={() => scrollToSection('about')}
               className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base"
             >
-              Вызовы
+              О курсе
             </button>
             <button
-              onClick={() => scrollToSection('solutions')}
+              onClick={() => scrollToSection('program')}
               className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base"
             >
-              Решения
+              Программа
             </button>
             <button
-              onClick={() => scrollToSection('process')}
+              onClick={() => scrollToSection('mentors')}
               className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base"
             >
-              Процесс
+              Менторы
             </button>
             <Link
-              href="/"
+              href="/old_lP_alma"
               className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base"
             >
-              Курс AI Engineer
+              AI для бизнеса
             </Link>
           </div>
 
-          {/* Кнопка связи */}
+          {/* Кнопка записи */}
           <div className="hidden sm:block">
             <button
               onClick={scrollToContact}
@@ -99,7 +97,7 @@ export function Header() {
                      text-white font-medium rounded-full hover:shadow-lg hover:shadow-primary-500/30 
                      transition-all duration-300 text-sm sm:text-base"
             >
-              Связаться
+              Записаться
             </button>
           </div>
 
@@ -111,7 +109,7 @@ export function Header() {
                      text-white text-sm font-medium rounded-full hover:shadow-lg hover:shadow-primary-500/30 
                      transition-all duration-300 sm:hidden"
             >
-              Связаться
+              Записаться
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -143,36 +141,36 @@ export function Header() {
           >
             <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 sm:py-4 flex flex-col space-y-2 sm:space-y-3">
               <button
-                onClick={() => scrollToSection('challenges')}
+                onClick={() => scrollToSection('about')}
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
               >
-                Вызовы
+                О курсе
               </button>
               <button
-                onClick={() => scrollToSection('solutions')}
+                onClick={() => scrollToSection('program')}
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
               >
-                Решения
+                Программа
               </button>
               <button
-                onClick={() => scrollToSection('process')}
+                onClick={() => scrollToSection('mentors')}
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
               >
-                Процесс
+                Менторы
               </button>
               <Link
-                href="/"
+                href="/old_lP_alma"
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Курс AI Engineer
+                AI для бизнеса
               </Link>
               <button
                 onClick={scrollToContact}
                 className="px-3 py-2 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
                        text-gray-900 rounded-lg font-medium text-left"
               >
-                Связаться
+                Записаться
               </button>
             </div>
           </motion.div>
@@ -180,4 +178,4 @@ export function Header() {
       </AnimatePresence>
     </header>
   )
-} 
+}

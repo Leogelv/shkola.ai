@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import logoImage from '../../public/logo.svg'
+// import Image from 'next/image'
+// import logoImage from '../../public/logo.svg'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -20,14 +20,9 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 sm:mb-12">
           {/* Колонка с логотипом и информацией */}
           <div className="space-y-4 sm:space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="relative w-8 h-8 sm:w-10 sm:h-10">
-                <Image 
-                  src={logoImage} 
-                  alt="AlmaTech Logo"
-                  fill
-                  className="object-contain invert" 
-                />
+            <Link href="/old_lP_alma" className="flex items-center gap-2">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">A</span>
               </div>
               <div className="flex flex-col">
                 <span className="text-lg sm:text-xl font-bold text-white">

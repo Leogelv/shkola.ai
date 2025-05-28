@@ -1,4 +1,3 @@
-import { CourseHeader } from '@/components/course/CourseHeader'
 import CourseHero from '@/components/course/CourseHero'
 import AboutCourse from '@/components/course/AboutCourse'
 import Program from '@/components/course/Program'
@@ -10,22 +9,19 @@ import Testimonials from '@/components/course/Testimonials'
 import CTASection from '@/components/course/CTASection'
 import { CourseFooter } from '@/components/course/CourseFooter'
 
-export default function Home() {
+export default function AIGenCoursePage() {
   return (
-    <>
-      <CourseHeader />
-      <main>
-        <CourseHero />
-        <AboutCourse />
-        <Program />
-        <Advantages />
-        <AITutor />
-        <CareerProspects />
-        <Mentors />
-        <Testimonials />
-        <CTASection />
-        <CourseFooter />
-      </main>
-    </>
+    <main>
+      <CourseHero />
+      <AboutCourse />
+      <Program />
+      <Advantages />
+      <AITutor />
+      <CareerProspects />
+      <Mentors />
+      <Testimonials />
+      <CTASection />
+      <CourseFooter />
+    </main>
   )
 }
