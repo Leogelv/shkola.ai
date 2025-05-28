@@ -50,19 +50,16 @@ export function Header() {
         <nav className="flex items-center justify-between">
           {/* Логотип */}
           <div className="flex-shrink-0">
-            <Link href="/old_lP_alma" className="flex items-center gap-3">
-              <div className="w-12 h-12 sm:w-16 sm:h-16">
+            <Link href="/old_lP_alma">
+              <div className="w-24 h-24 sm:w-32 sm:h-32">
                 <Image 
                   src="/logos/logo.svg" 
                   alt="AlmaTech" 
-                  width={64} 
-                  height={64} 
+                  width={128} 
+                  height={128} 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
-                AlmaTech
-              </span>
             </Link>
           </div>
 

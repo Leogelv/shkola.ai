@@ -12,19 +12,16 @@ export function CourseFooter() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 sm:mb-12">
           {/* Колонка с логотипом и информацией */}
           <div className="space-y-4 sm:space-y-6">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 sm:w-16 sm:h-16">
+            <Link href="/">
+              <div className="w-24 h-24 sm:w-32 sm:h-32">
                 <Image 
                   src="/logos/logo.svg" 
                   alt="shkola.ai" 
-                  width={64} 
-                  height={64} 
+                  width={128} 
+                  height={128} 
                   className="w-full h-full object-contain brightness-0 invert"
                 />
               </div>
-              <span className="text-xl sm:text-2xl font-bold text-white">
-                shkola.ai
-              </span>
             </Link>
             <p className="text-sm text-gray-400 max-w-xs">
               Профессиональное обучение AI-инженерии с персональным наставником и практическими проектами.
