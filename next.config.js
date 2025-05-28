@@ -21,12 +21,6 @@ const nextConfig = {
       }
     })
     return config
-  },
-
-  // Увеличиваем таймаут для загрузки ресурсов
-  httpAgentOptions: {
-    keepAlive: true,
-    timeout: 60000
   }
 }
 
