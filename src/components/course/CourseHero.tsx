@@ -106,7 +106,7 @@ const CourseHero = () => {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <Image src="/AlmaTechMan.svg" alt="AI Engineer" width={600} height={600} className='h-full w-auto object-contain' />
+              <Image src="/aiagentshkola.svg" alt="AI Agent Shkola" width={600} height={600} className='h-full w-auto object-contain' />
             </motion.div>
           </div>
         </div>

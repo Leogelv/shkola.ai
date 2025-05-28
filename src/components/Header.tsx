@@ -51,12 +51,12 @@ export function Header() {
           {/* Логотип */}
           <div className="flex-shrink-0">
             <Link href="/old_lP_alma">
-              <div className="w-24 h-24 sm:w-32 sm:h-32">
+              <div className="w-48 h-48 sm:w-64 sm:h-64">
                 <Image 
                   src="/logos/logo.svg" 
                   alt="AlmaTech" 
-                  width={128} 
-                  height={128} 
+                  width={256} 
+                  height={256} 
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -139,37 +139,37 @@ export function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden bg-white border-t border-gray-200 shadow-lg"
+            className="md:hidden bg-white border-t border-gray-200 shadow-lg overflow-hidden"
           >
-            <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 sm:py-4 flex flex-col space-y-2 sm:space-y-3">
+            <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 flex flex-col">
               <button
                 onClick={() => scrollToSection('challenges')}
-                className="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
+                className="px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
               >
                 Вызовы
               </button>
               <button
                 onClick={() => scrollToSection('solutions')}
-                className="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
+                className="px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
               >
                 Решения
               </button>
               <button
                 onClick={() => scrollToSection('process')}
-                className="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
+                className="px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
               >
                 Процесс
               </button>
               <Link
                 href="/"
-                className="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
+                className="px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors text-left font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Курс AI Engineer
               </Link>
               <button
                 onClick={scrollToContact}
-                className="px-3 py-2 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
+                className="mx-3 mt-2 px-3 py-3 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
                        text-gray-900 rounded-lg font-medium text-left"
               >
                 Связаться
