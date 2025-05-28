@@ -57,9 +57,6 @@ export function CourseHeader() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="ml-2 text-lg sm:text-xl font-bold text-gray-900">
-                shkola.ai
-              </span>
             </Link>
           </div>
 
