@@ -49,13 +49,13 @@ export function Header() {
           {/* Логотип */}
           <div className="flex-shrink-0">
             <Link href="/old_lP_alma" className="flex items-center">
-              <div className="w-10 h-10 sm:w-12 sm:h-12">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 overflow-hidden">
                 <Image 
                   src="/logos/logo.svg" 
                   alt="AlmaTech" 
-                  width={48} 
-                  height={48} 
-                  className="w-full h-full object-contain"
+                  width={96} 
+                  height={96} 
+                  className="w-full h-[120%] object-contain -mt-[10%]"
                 />
               </div>
             </Link>
