@@ -6,7 +6,7 @@ const mentors = [
   {
     name: "Леонид Гельвих",
     role: "Ведущий инструктор",
-    experience: "5+ лет опыта в production AI systems",
+    experience: "AI automation agency cofounder, Cognitive Architect, Lead AI PM, преподаватель с опытом работы с более чем 1000 студентов",
     avatar: "/leonid_photo.jpg",
     color: "from-blue-500 to-cyan-500"
   },
