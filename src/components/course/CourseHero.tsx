@@ -1,10 +1,12 @@
 'use client'
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { RegistrationForm } from './RegistrationForm'
 
 const CourseHero = () => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false)
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -12,11 +14,8 @@ const CourseHero = () => {
   
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
 
-  const scrollToContact = () => {
-    const contactSection = document.querySelector('section:last-child')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
-    }
+  const openRegistrationForm = () => {
+    setIsRegistrationFormOpen(true)
   }
 
   return (
@@ -52,12 +51,13 @@ const CourseHero = () => {
             </motion.div>
 
             <motion.h1 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="!mt-0 pb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-br from-gray-900 to-gray-700 bg-clip-text text-transparent tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-br from-gray-900 to-gray-700 bg-clip-text text-transparent 
+                       tracking-tight leading-tight mb-4 sm:mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              Стань Junior AI-инженером за 27 недель
+              GenAI Engineer
             </motion.h1>
             
             <motion.p 
@@ -66,7 +66,7 @@ const CourseHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Курс AI Engineer (Generative AI & AI Agents) — создавай AI-агентов и автоматизируй бизнес-процессы с нуля. Изучай LangChain, CrewAI и другие современные технологии.
+              Курс GenAI Engineer — создавай AI-агентов и автоматизируй бизнес-процессы с нуля. Изучай LangChain, CrewAI и другие современные технологии.
             </motion.p>
 
             <motion.div 
@@ -82,7 +82,7 @@ const CourseHero = () => {
 
             <motion.div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 pt-4">
               <motion.button 
-                onClick={scrollToContact}
+                onClick={openRegistrationForm}
                 className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full text-sm sm:text-base md:text-lg font-medium 
                          text-white hover:shadow-glow-lg transition-all relative overflow-hidden group whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
@@ -111,6 +111,11 @@ const CourseHero = () => {
           </div>
         </div>
       </div>
+
+      <RegistrationForm 
+        isOpen={isRegistrationFormOpen} 
+        onClose={() => setIsRegistrationFormOpen(false)} 
+      />
     </div>
   )
 }

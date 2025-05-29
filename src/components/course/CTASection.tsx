@@ -1,12 +1,13 @@
 'use client'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { RegistrationForm } from './RegistrationForm'
 
 const CTASection = () => {
-  const scrollToContact = () => {
-    const contactSection = document.querySelector('section:last-child')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
-    }
+  const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false)
+
+  const openRegistrationForm = () => {
+    setIsRegistrationFormOpen(true)
   }
 
   return (
@@ -33,7 +34,7 @@ const CTASection = () => {
             viewport={{ once: true }}
           >
             <motion.button 
-              onClick={scrollToContact}
+              onClick={openRegistrationForm}
               className="px-8 py-4 bg-white text-primary-500 rounded-full text-lg font-semibold hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -42,7 +43,7 @@ const CTASection = () => {
             </motion.button>
             
             <motion.button 
-              onClick={scrollToContact}
+              onClick={openRegistrationForm}
               className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-lg font-semibold hover:bg-white hover:text-primary-500 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -52,6 +53,11 @@ const CTASection = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      <RegistrationForm 
+        isOpen={isRegistrationFormOpen} 
+        onClose={() => setIsRegistrationFormOpen(false)} 
+      />
     </section>
   )
 }

@@ -72,7 +72,7 @@ export function CourseFooter() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                 </svg>
                 <span className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
-                  <a href="tel:+77771234567">+7 (777) 123-45-67</a>
+                  <a href="tel:+77718999999">+7 (771) 899-99-99</a>
                 </span>
               </li>
             </ul>
@@ -82,11 +82,6 @@ export function CourseFooter() {
           <div>
             <h3 className="text-base sm:text-lg font-medium text-white mb-4 sm:mb-6">Дополнительно</h3>
             <ul className="space-y-2 sm:space-y-3">
-              <li>
-                <Link href="/old_lP_alma" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
-                  AlmaTech (AI для бизнеса)
-                </Link>
-              </li>
               <li>
                 <a href="#" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                   Политика конфиденциальности
@@ -108,7 +103,7 @@ export function CourseFooter() {
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <div className="mb-4 sm:mb-0 order-2 sm:order-1">
             <p className="text-xs sm:text-sm text-gray-500">
-              © {currentYear} shkola.ai. Все права защищены.
+              © {currentYear} shkola.ai. Все права защищены. TOO "AI Land"
             </p>
           </div>
         </div>

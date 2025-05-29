@@ -5,10 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
+import { RegistrationForm } from './RegistrationForm'
 
 export function CourseHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +22,9 @@ export function CourseHeader() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToContact = () => {
+  const openRegistrationForm = () => {
     setIsMobileMenuOpen(false)
-    const contactSection = document.querySelector('section:last-child')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
-    }
+    setIsRegistrationFormOpen(true)
   }
 
   const scrollToSection = (id: string) => {
@@ -80,18 +79,12 @@ export function CourseHeader() {
             >
               Менторы
             </button>
-            <Link
-              href="/old_lP_alma"
-              className="text-gray-600 hover:text-primary-500 transition-colors text-sm lg:text-base font-medium"
-            >
-              AI для бизнеса
-            </Link>
           </div>
 
           {/* Кнопка записи */}
           <div className="hidden sm:block">
             <button
-              onClick={scrollToContact}
+              onClick={openRegistrationForm}
               className="px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-primary-500 to-secondary-500 
                      text-white font-medium rounded-full hover:shadow-lg hover:shadow-primary-500/30 
                      transition-all duration-300 text-sm sm:text-base"
@@ -103,7 +96,7 @@ export function CourseHeader() {
           {/* Мобильное меню кнопка */}
           <div className="md:hidden flex items-center gap-2">
             <button
-              onClick={scrollToContact}
+              onClick={openRegistrationForm}
               className="px-3 py-1.5 bg-gradient-to-r from-primary-500 to-secondary-500 
                      text-white text-sm font-medium rounded-full hover:shadow-lg hover:shadow-primary-500/30 
                      transition-all duration-300 sm:hidden"
@@ -157,16 +150,9 @@ export function CourseHeader() {
               >
                 Менторы
               </button>
-              <Link
-                href="/old_lP_alma"
-                className="block w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-primary-500 transition-colors font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                AI для бизнеса
-              </Link>
               <div className="pt-2 border-t border-gray-200">
                 <button
-                  onClick={scrollToContact}
+                  onClick={openRegistrationForm}
                   className="block w-full text-left px-3 py-2 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 
                          text-gray-900 rounded-lg font-medium"
                 >
@@ -177,6 +163,11 @@ export function CourseHeader() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <RegistrationForm 
+        isOpen={isRegistrationFormOpen} 
+        onClose={() => setIsRegistrationFormOpen(false)} 
+      />
     </header>
   )
 }

@@ -1,12 +1,13 @@
 'use client'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const mentors = [
   {
-    name: "Senior AI Engineer",
+    name: "Леонид Гельвих",
     role: "Ведущий инструктор",
     experience: "5+ лет опыта в production AI systems",
-    avatar: "👨‍💻",
+    avatar: "/leonid_photo.jpg",
     color: "from-blue-500 to-cyan-500"
   },
   {
@@ -52,8 +53,18 @@ const Mentors = () => {
               className="bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-3xl p-8 shadow-sharp hover:shadow-xl transition-all duration-300"
             >
               <div className="text-center">
-                <div className={`w-20 h-20 rounded-full bg-gradient-to-r ${mentor.color} flex items-center justify-center mx-auto mb-6`}>
-                  <span className="text-3xl">{mentor.avatar}</span>
+                <div className={`w-20 h-20 rounded-full bg-gradient-to-r ${mentor.color} flex items-center justify-center mx-auto mb-6 overflow-hidden`}>
+                  {mentor.avatar.startsWith('/') ? (
+                    <Image 
+                      src={mentor.avatar} 
+                      alt={mentor.name} 
+                      width={80} 
+                      height={80} 
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-3xl">{mentor.avatar}</span>
+                  )}
                 </div>
                 
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{mentor.name}</h3>

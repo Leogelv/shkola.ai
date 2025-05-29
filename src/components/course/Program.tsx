@@ -111,9 +111,14 @@ const Program = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <button className="px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full font-medium hover:shadow-glow-lg transition-all">
+          <a 
+            href="/Syllabus_ShkolaAI.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full font-medium hover:shadow-glow-lg transition-all"
+          >
             Посмотреть полную программу
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

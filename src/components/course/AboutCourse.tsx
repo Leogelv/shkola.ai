@@ -26,7 +26,7 @@ const AboutCourse = () => {
         >
           <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-3xl p-8 sm:p-12 shadow-sharp">
             <p className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-8">
-              Курс "AI Engineer (Generative AI & AI Agents) - Начальный уровень" готовит Junior AI-инженеров, способных решать реальные бизнес-задачи через автоматизацию процессов и создание AI-агентов. Вы научитесь разрабатывать функциональные AI-приложения с LangChain, интегрировать системы и создавать рабочие MVP для практического применения.
+              Курс «GenAI Engineer — Начальный уровень» готовит Junior GenAI-инженеров, способных решать реальные бизнес-задачи через автоматизацию процессов и создание AI-агентов. Вы научитесь разрабатывать функциональные AI-приложения с LangChain, интегрировать системы и создавать рабочие MVP для практического применения.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
