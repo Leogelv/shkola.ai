@@ -83,14 +83,14 @@ export function CourseFooter() {
             <h3 className="text-base sm:text-lg font-medium text-white mb-4 sm:mb-6">Дополнительно</h3>
             <ul className="space-y-2 sm:space-y-3">
               <li>
-                <a href="#" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
+                <Link href="/privacy" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                   Политика конфиденциальности
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
+                <Link href="/terms" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                   Условия обучения
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
