@@ -3,13 +3,13 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const modules = [
-  {
+  /*{
     title: "Starter Bootcamp",
     weeks: "Неделя 0",
     description: "Вводный модуль: настройка рабочего окружения, основы программирования и знакомство с AI-инструментами.",
     project: "Подготовка к основному курсу",
     color: "from-gray-500 to-slate-500"
-  },
+  },*/
   {
     title: "AI-инженерия с современными инструментами",
     weeks: "Недели 1-4",
@@ -71,7 +71,7 @@ const Program = () => {
             Программа обучения
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            27 недель полного погружения включая Starter Bootcamp. Основная программа - 26 недель.
+            Основная программа - 26 недель.
           </p>
         </motion.div>
 
