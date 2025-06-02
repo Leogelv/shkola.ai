@@ -40,9 +40,9 @@ const AboutCourse = () => {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-white">104-130</span>
+                  <span className="text-xl font-bold text-white">104</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">часов практики</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">часа практики</h3>
                 <p className="text-gray-600">с реальными проектами</p>
               </div>
               
