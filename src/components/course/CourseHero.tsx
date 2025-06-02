@@ -75,7 +75,7 @@ const CourseHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="bg-gray-100 px-3 py-1 rounded-full">27 недель</span>
+              <span className="bg-gray-100 px-3 py-1 rounded-full">26 недель</span>
               <span className="bg-gray-100 px-3 py-1 rounded-full">400 000 тенге</span>
               <span className="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent font-medium px-3 py-1 rounded-full bg-green-50">Зарплата $80-120K*</span>
             </motion.div>
