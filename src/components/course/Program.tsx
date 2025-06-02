@@ -88,7 +88,7 @@ const Program = () => {
             >
               <div className="flex items-start gap-4">
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${module.color} flex items-center justify-center flex-shrink-0`}>
-                  <span className="text-white font-bold text-lg">{index === 0 ? '0' : index}</span>
+                  <span className="text-white font-bold text-lg">{index + 1}</span>
                 </div>
                 <div className="flex-1">
                   <div className="text-sm font-medium text-gray-500 mb-2">{module.weeks}</div>
