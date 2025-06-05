@@ -32,18 +32,18 @@ const AboutCourse = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-white">31</span>
+                  <span className="text-2xl font-bold text-white">104</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">академических часов</h3>
-                <p className="text-gray-600">лайв-сессий</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">академических часа</h3>
+                <p className="text-gray-600">обучения</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-white">104</span>
+                  <span className="text-xl font-bold text-white">31</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">часа практики</h3>
-                <p className="text-gray-600">с реальными проектами</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">академический час</h3>
+                <p className="text-gray-600">лайв-сессии</p>
               </div>
               
               <div className="text-center">
